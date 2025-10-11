@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stddef.h>
 #include <stdbool.h>
-
+#define ARRAY_SIZE 5
 int main(void)
 {
 
@@ -43,5 +43,35 @@ int main(void)
         printf("false\n");
     }
 
+    // 2. caractères : différencier le type numérique sur un octet et les caractères.
+    puts("******************************");
+    char numericCode1 = 65;
+    char numericCode2 = 'a';
+    printf("numericCode1 as byte : %d octets \n", numericCode1);
+    printf("numericCode1 as char : %c \n", numericCode1);
+
+    printf("numericCode2 as byte : %d octets \n", numericCode2);
+    printf("numericCode2 as char : %c \n", numericCode2);
+
+    puts("******************************");
+    // 3. arrays
+    int array[ARRAY_SIZE] = {1, 2, 4, 8, 16};
+    for (int i = 0; i < ARRAY_SIZE; i++)
+    {
+        printf("arrar[%d] == %d\n", i, array[i]);
+    }
+    /**
+     * REMARQUES :
+     * i - en C le tableau ne connait pas sa taille, on peut soit la calculer ou la définir (avec une macro)
+     * ii - le C ne vériife pas les indices d'un tableau
+     * iii - les cases d'un tableau ne sont pas initialisés par défaut
+     */
+
+    int arraySize = sizeof(array) / sizeof(array[0]);
+
+    printf("Taille du tableau calculé avec sizeof() = %d éléments\n", arraySize);
+    puts("******************************");
+    puts("******************************");
+    puts("******************************");
     return 0;
 }
