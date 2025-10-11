@@ -66,11 +66,15 @@ int main(void)
      * ii - le C ne vériife pas les indices d'un tableau
      * iii - les cases d'un tableau ne sont pas initialisés par défaut
      */
-
     int arraySize = sizeof(array) / sizeof(array[0]);
-
     printf("Taille du tableau calculé avec sizeof() = %d éléments\n", arraySize);
     puts("******************************");
+    const char *firstName = "Daddy";
+    char lastName[] = "Bibson";
+    char label[8] = {'R', 'A', 'P', 'A', 'D', 'I', 'O', '\0'};
+    // const char *lastName = "Bibson";
+    printf("I'm %s %s and my label name is %s\n", firstName, lastName, label);
+
     puts("******************************");
     puts("******************************");
     return 0;
