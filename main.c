@@ -2,6 +2,21 @@
 #include <stddef.h>
 #include <stdbool.h>
 #define ARRAY_SIZE 5
+
+struct Rationnal
+{
+    int numerator;
+    int denominator;
+};
+
+enum LifeCycleState
+{
+    INITIALIZED,
+    STARTED,
+    STOPED,
+    DESTROYED
+};
+
 int main(void)
 {
 
@@ -54,6 +69,7 @@ int main(void)
     printf("numericCode2 as char : %c \n", numericCode2);
 
     puts("******************************");
+
     // 3. arrays
     int array[ARRAY_SIZE] = {1, 2, 4, 8, 16};
     for (int i = 0; i < ARRAY_SIZE; i++)
@@ -69,18 +85,41 @@ int main(void)
     int arraySize = sizeof(array) / sizeof(array[0]);
     printf("Taille du tableau calculé avec sizeof() = %d éléments\n", arraySize);
     puts("******************************");
-    //4. strings
+
+    // 4. strings
     const char *firstName = "Daddy";
     char lastName[] = "Bibson";
     char label[8] = {'R', 'A', 'P', 'A', 'D', 'I', 'O', '\0'};
     // const char *lastName = "Bibson";
     printf("I'm %s %s and my label name is %s\n", firstName, lastName, label);
     puts("******************************");
-    //5. pointeurs
+    // 5. pointeurs
     int value = 41;
-    int * addr = &value; //addr est un pointeur sur un entier (une adresse vers un entier)
+    int *addr = &value; // addr est un pointeur sur un entier (une adresse vers un entier)
     *addr += 1;
     printf("value modifié via pointeur %d\n", value);
+
+    puts("******************************");
+
+    // 5. structure
+    struct Rationnal rt;
+    rt.numerator = 1;
+    rt.denominator = 3;
+    printf("Our rationnal : [%d/%d]\n, ", rt.numerator, rt.denominator);
+
+    puts("******************************");
+    // 6 énumération
+    enum LifeCycleState currentState = INITIALIZED;
+    printf("Current state (a) = %d\n", currentState);
+
+    currentState = STOPED;
+    printf("Current state (b) =  %d\n", currentState);
+
+    currentState = STARTED;
+    printf("Current state (c) =  %d\n", currentState);
+
+    currentState = DESTROYED;
+    printf("Current state (d) =  %d\n", currentState);
 
     puts("******************************");
     return 0;
