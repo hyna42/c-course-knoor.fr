@@ -1,11 +1,28 @@
 #include <stdio.h>
 #include <stddef.h>
+#include <stdlib.h>
 
-int main(void)
+unsigned int fac(unsigned int value)
+{
+    unsigned int result = 1;
+    while (value > 1)
+    {
+        result *= value;
+        value--;
+    }
+
+    return result;
+}
+
+int main(int argc, char *argv[])
 {
 
-    size_t number1 = 10;
-    printf("Res %lu\n", number1);
-    int number2 = 500;
-    printf("izeof(n2) = %lu\n", sizeof(number2));
+    printf("factoriel de 5 = %d \n", fac(5));
+    printf("factoriel de 4 = %d \n", fac(4));
+
+    for (int i = 1; i < argc; i++)
+    {
+        printf("Argument at position %2d == %s\n", i, argv[i]);
+    }
+    return 0;
 }
