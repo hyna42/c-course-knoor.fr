@@ -3,11 +3,11 @@
 #include <stdbool.h>
 #define ARRAY_SIZE 5
 
-struct Rationnal
+typedef struct Rationnal
 {
     int numerator;
     int denominator;
-};
+} Ratio;
 
 enum LifeCycleState
 {
@@ -102,10 +102,10 @@ int main(void)
     puts("******************************");
 
     // 5. structure
-    struct Rationnal rt;
-    rt.numerator = 1;
-    rt.denominator = 3;
-    printf("Our rationnal : [%d/%d]\n, ", rt.numerator, rt.denominator);
+    struct Rationnal rt1;
+    rt1.numerator = 1;
+    rt1.denominator = 3;
+    printf("Our rationnal : [%d/%d]\n, ", rt1.numerator, rt1.denominator);
 
     puts("******************************");
     // 6 énumération
@@ -122,5 +122,11 @@ int main(void)
     printf("Current state (d) =  %d\n", currentState);
 
     puts("******************************");
+    // 6. typedef : faire une alias (souvent utilisé typedef x struct)
+    Ratio rt2;
+    rt2.numerator = 4;
+    rt2.denominator = 7;
+    printf("Typedef utilisé avec les structures : [%d/%d]\n", rt2.numerator, rt2.denominator);
+
     return 0;
 }
