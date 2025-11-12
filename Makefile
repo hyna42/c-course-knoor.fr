@@ -1,5 +1,7 @@
-SRC = main.c functions/factoriel.c
-FLAGS = -std=c2x -pedantic -Wall -Wextra -Werror main.c functions/factoriel.c -o prog
+SRC = main.c functions/factoriel.c functions/addition.c
+
+
+FLAGS = -std=c2x -pedantic -Wall -Wextra -Werror main.c functions/factoriel.c functions/addition.c -o prog
 
 all : prog
 	@./prog
