@@ -1,8 +1,11 @@
+SRC = main.c functions/factoriel.c
+FLAGS = -std=c2x -pedantic -Wall -Wextra -Werror main.c functions/factoriel.c -o prog
+
 all : prog
 	@./prog
 
-prog : main.c
-	@gcc -std=c2x -pedantic -Wall -Wextra -Werror main.c -o prog
+prog : $(SRC)
+	@gcc $(FLAGS)
 
 run: prog
 	@./prog
