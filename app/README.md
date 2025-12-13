@@ -1,5 +1,7 @@
 ## compiler
+
 `make`
 
-## lancer le projet
-`make run`
+## clean
+
+`make clean`
