@@ -35,6 +35,52 @@ int swap2(int *param1, int *param2)
 //     p = 12;                          // Cannot write. Content of value cannot be writed.
 // }
 
+/*
+ * Fonction d'affichage d'un tableau (syntaxe pointeur)
+ */
+void displayIntArray_PTR(int *array, size_t size)
+{
+    for (size_t i = 0; i < size; i++)
+    {
+        printf("%d ", *(array + i));
+    }
+    printf("\n");
+}
+
+/*
+ * Fonction d'affichage d'un tableau (syntaxe tableau)
+ */
+void displayIntArray_TB(int *array, size_t size)
+{
+    for (size_t i = 0; i < size; i++)
+    {
+        printf("%d ", array[i]);
+    }
+    printf("\n");
+}
+
+/*
+ * Fonction de réinitialisation d'un tableau (syntaxe pointeur)
+ */
+void clearIntArray_PTR(int *array, size_t size)
+{
+    for (size_t i = 0; i < size; i++)
+    {
+        *(array + i) = 0;
+    }
+}
+
+/*
+ * Fonction de réinitialisation d'un tableau (syntaxe tableau)
+ */
+void clearIntArray_TB(int *array, size_t size)
+{
+    for (size_t i = 0; i < size; i++)
+    {
+        array[i] = 0;
+    }
+}
+
 int main(void)
 {
     puts("############ POINTEURS ############");
@@ -64,14 +110,30 @@ int main(void)
     // int p = 10;
     // canreadNotWrite(&p);
 
-    puts("----TABLEAU ET POINT ---");
+    puts("----II. TABLEAU ET POINTEUR  ---");
     // un tableau est un pointeur vers son premier élément : d'ou l'intére de fournir la taile du tableau
-    int  tab[] = { 10, 20, 30 };
-    for (int i = 0; i < SIZE;i++)
+    int tab[] = {10, 20, 30};
+    for (int i = 0; i < SIZE; i++)
     {
-        printf("tab %d == %d\n",i,*(tab + i)); //accéder à tab[i]
+        printf("tab %d == %d\n", i, *(tab + i)); // parcourir un tableau facon pointeur : *(tab + i) <=> tab[i]
     }
-    printf("VERIF (1) :: %p == %p\n", (void*)tab,(void *)&tab[0]); //un tableau est un pointeur a son premier élément
+    printf("VERIF (1) :: %p == %p\n", (void *)tab, (void *)&tab[0]); // un tableau est un pointeur a son premier élément
+
+    int array[] = {1, 2, 3, 4, 5};
+    size_t arraySize = 5;
+
+    puts("----DISPLAY ARRAY with pointer or array  ---");
+    // array -> pointeur
+    displayIntArray_PTR(array, arraySize);
+    // array -> array
+    displayIntArray_TB(array, arraySize);
+    puts("----CLEAR ARRAY with pointer or array  ---");
+    // reinitialise tablea
+    clearIntArray_TB(array, arraySize);
+
+    displayIntArray_PTR(array, arraySize);
+
+    puts("----III. CHAINES DE CARACTERES ET POINTEURS  ---");
 
     return 0;
 }
