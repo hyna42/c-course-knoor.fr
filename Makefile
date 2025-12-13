@@ -1,11 +1,20 @@
-all : prog
-	@./prog
+#FILES
+CC=gcc
+PROG=bin/prog
+SOURCES=src/main.c libs/add/addition.c libs/fact/factoriel.c
 
-prog : main.c
-	@gcc -std=c2x -pedantic -Wall -Wextra -Werror main.c -o prog
+#FLAGS
+CFLAGS=-std=c2x -pedantic -Wall -Wextra -Werror 
 
-run: prog
-	@./prog
+#cible par defaut
+
+all : $(PROG)
+	@./$(PROG)
+
+$(PROG) : $(SOURCES)
+	@$(CC) $(CFLAGS) $(SOURCES) -o $(PROG)
+	echo "✅compilation done 5/5 -> prog"
 
 clean: 
-	@rm -f prog
+	@rm -f $(PROG)
+	echo "🧹bin/prog deleted"

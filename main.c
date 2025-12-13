@@ -1,11 +1,18 @@
 #include <stdio.h>
-#include <stddef.h>
+#include "../libs/add/addition.h"
+#include "../libs/fact/factoriel.h"
+
 
 int main(void)
 {
 
-    size_t number1 = 10;
-    printf("Res %lu\n", number1);
-    int number2 = 500;
-    printf("izeof(n2) = %lu\n", sizeof(number2));
+    puts("**** MAIN ****");
+    printf("factoriel de 5 = %d \n", factoriel(5));
+    printf("factoriel de 4 = %d \n", factoriel(4));
+    
+    
+    puts("**** somme dynamique****");
+    printf("somme (3,7,8,9) = %d\n", addition(3, 7, 8, 9));
+
+    return 0;
 }
