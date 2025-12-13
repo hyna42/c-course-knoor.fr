@@ -25,6 +25,14 @@ int swap2(int *param1, int *param2)
 
     return 1;
 }
+
+void canreadNotWrite(const int *p){
+    printf("READ VALUE :: %d\n", *p);// Can read
+    *p = 12;// Cannot write. Content of value cannot be writed.
+
+}
+
+
 int main(void)
 {
     puts("############ POINTEURS ############");
@@ -48,6 +56,11 @@ int main(void)
     puts("----permutation KO using pointer/adress ----");
     swap2(&a, &b);
     printf("OK swap :: a==%d, b==%d\n", a, b);
+    
+    //secutité : canot write : const + pointer 
+    puts("----CAN READ / NOT WRITE ---");
+    int p = 10;
+    canreadNotWrite(&p);
 
     return 0;
 }
