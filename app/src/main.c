@@ -1,7 +1,4 @@
 #include <stdio.h>
-// #include <stddef.h>
-// #include <stdlib.h>
-// #include <stdarg.h>
 #include "../libs/add/addition.h"
 #include "../libs/fact/factoriel.h"
 

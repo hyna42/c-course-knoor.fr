@@ -13,8 +13,8 @@ all : $(PROG)
 
 $(PROG) : $(SOURCES)
 	@$(CC) $(CFLAGS) $(SOURCES) -o $(PROG)
-	echo "✅compilation done 5/5 -> prog"
+	@echo "✅compilation done 5/5 -> prog"
 
 clean: 
 	@rm -f $(PROG)
-	echo "🧹bin/prog deleted"
+	@echo "🧹bin/prog deleted"
