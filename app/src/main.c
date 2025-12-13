@@ -6,10 +6,17 @@
 #include "../libs/fact/factoriel.h"
 
 
-int main(void)
+int main(int argc, char * argv [] )
 {
 
-    puts("**** calcul factoriel ****");
+
+    puts("**** utilisation des arguments passées à une fonction ****");
+    for (int i = 0; i < argc;i++){
+        //cettte fonction affiche les différents arguments passés à la fonction
+        printf("Argument à l'index %2d == %s\n", i, argv[i]);
+    }
+
+        puts("**** calcul factoriel ****");
     printf("factoriel de 5 = %d \n", factoriel(5));
     printf("factoriel de 4 = %d \n", factoriel(4));
     

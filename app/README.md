@@ -1,6 +1,8 @@
-## compiler
-
+## build
 `make`
+
+## run
+`make run`
 
 ## clean
 
