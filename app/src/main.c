@@ -2,17 +2,21 @@
 #include "../libs/add/addition.h"
 #include "../libs/fact/factoriel.h"
 
-
 int main(void)
 {
+    puts("############ POINTEURS ############");
+    int value = 10;
+    int *pointeur = &value;  // contient l'adresse en mémoire de la variable
 
-    puts("**** calcul factoriel ****");
-    printf("factoriel de 5 = %d \n", factoriel(5));
-    printf("factoriel de 4 = %d \n", factoriel(4));
     
-    
-    puts("**** somme dynamique****");
-    printf("somme (3,7,8,9) = %d\n", addition(3, 7, 8, 9));
+    printf("value == %d at %p\n", value, (void *) pointeur);
 
+    *pointeur = 15;
+
+    int x = 10;
+    int *adX = &x;
+
+    // change la valeur stockée à l'adresse mais pas l'adresse elle meme
+    printf("value == %d at %p\n", value, (void *) pointeur);
     return 0;
 }

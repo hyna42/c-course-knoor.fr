@@ -8,13 +8,21 @@ CFLAGS=-std=c2x -pedantic -Wall -Wextra -Werror
 
 #cible par defaut
 
+#build
 all : $(PROG)
-	@./$(PROG)
 
 $(PROG) : $(SOURCES)
 	@$(CC) $(CFLAGS) $(SOURCES) -o $(PROG)
-	@echo "✅compilation done 5/5 -> prog"
+	@echo "✅ build ok -> $(PROG)"
+
+
+#exécution
+run: $(PROG)
+	@./$(PROG) $(ARG)
 
 clean: 
 	@rm -f $(PROG)
-	@echo "🧹bin/prog deleted"
+	@echo "🧹 deleted -> ${PROG}"
+
+
+.PHONY: all run clean
