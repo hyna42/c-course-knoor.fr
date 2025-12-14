@@ -81,6 +81,31 @@ void clearIntArray_TB(int *array, size_t size)
     }
 }
 
+/**
+ * Fonction de calcul de la taille d'une chaîne de caractère :
+ * on boucle jusqu'à atteindre le caractère '\0' (la fin de chaîne)
+ */
+
+
+size_t myStrlen(const char *myString){
+    size_t size = 0;
+    
+  while (*myString != '\0')
+  {
+      printf("Char : %d\n,", *myString);
+      myString++;
+      size++;
+  }
+  
+    
+    return size;
+}
+
+
+/**
+ * Fonction de mise en majuscule d'une chaine de caractère ASCII
+ */
+
 int main(void)
 {
     puts("############ POINTEURS ############");
@@ -134,6 +159,9 @@ int main(void)
     displayIntArray_PTR(array, arraySize);
 
     puts("----III. CHAINES DE CARACTERES ET POINTEURS  ---");
+    int size = myStrlen("Daddy");
+    printf("size of my string === %d\n", size);
+
 
     return 0;
 }
