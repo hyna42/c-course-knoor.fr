@@ -86,25 +86,36 @@ void clearIntArray_TB(int *array, size_t size)
  * on boucle jusqu'à atteindre le caractère '\0' (la fin de chaîne)
  */
 
-
-size_t myStrlen(const char *myString){
+size_t myStrlen(const char *string)
+{
     size_t size = 0;
-    
-  while (*myString != '\0')
-  {
-      printf("Char : %d\n,", *myString);
-      myString++;
-      size++;
-  }
-  
-    
+
+    while (*string != '\0')
+    {
+        printf("Char : %d\n,", *string);
+        string++; // On déplace le pointeur sur le caractère suivant
+        size++;
+    }
+
     return size;
 }
 
-
 /**
  * Fonction de mise en majuscule d'une chaine de caractère ASCII
+ *
  */
+
+void toUpperCase(char *string)
+{
+    while (*string != '\0')
+    {
+        if (*string >= 'a' && *string <= 'z')
+        {
+            *string &= 223; // 223 == 255 - 32 == 255 - 2^5
+        }
+        string++; // On déplace le pointeur sur le caractère suivant
+    }
+}
 
 int main(void)
 {
@@ -159,9 +170,11 @@ int main(void)
     displayIntArray_PTR(array, arraySize);
 
     puts("----III. CHAINES DE CARACTERES ET POINTEURS  ---");
-    int size = myStrlen("Daddy");
-    printf("size of my string === %d\n", size);
+    char theString[] = "BAYE NIASS";
+    int size = myStrlen(theString);
+    printf("string : %s, len = %d\n", theString, size);
 
-
+    toUpperCase(theString);
+    printf("string after uppercase : %s\n",theString);
     return 0;
 }
