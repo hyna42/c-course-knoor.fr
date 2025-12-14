@@ -4,7 +4,7 @@ PROG=bin/prog
 SOURCES=src/main.c libs/add/addition.c libs/fact/factoriel.c
 
 #FLAGS
-CFLAGS=-std=c2x -pedantic -Wall -Wextra -Werror 
+CFLAGS=-std=c2x -pedantic -Wall -Wextra -Werror -g
 
 #cible par defaut
 
