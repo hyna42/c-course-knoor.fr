@@ -74,5 +74,10 @@ int main(void)
 
     process(4);
 
+    // addresse invalide du stème
+    
+    printf("%p\n", (void *)0);
+    printf("%p\n", (void *)NULL);
+
     return EXIT_SUCCESS;
 }
